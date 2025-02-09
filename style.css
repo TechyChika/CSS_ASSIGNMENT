@@ -1,0 +1,87 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+
+  @font-face {
+    font-family: "ExtraBoldFont";
+    src: url("./fonts/Gilroy-ExtraBold.ttf") format("truetype");
+    font-weight: 800; /* Adjust the weight to match the font style */
+    font-style: normal;
+  }
+  
+  /* Define the "Light" font */
+  @font-face {
+    font-family: "LightFont";
+    src: url("./fonts/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 300; /* Adjust the weight to match the font style */
+    font-style: normal;
+  }
+  
+  /* Apply the fonts to your body or specific elements */
+  body {
+    /* Default font: LightFont */
+    font-family: "LightFont", sans-serif;
+    line-height: 1.5; /* Improve readability */
+    -webkit-font-smoothing: antialiased; /* Improve text rendering */
+  }
+  
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  
+  
+  
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font-family: "ExtraBoldFont", sans-serif;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  details summary {
+    cursor: pointer;
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] summary::after {
+    content: "−";
+    float: right;
+    font-size: 1.25rem;
+    color: gray;
+  }
+  details summary::after {
+    content: "+";
+    float: right;
+    font-size: 1.25rem;
+    color: gray;
+  }
